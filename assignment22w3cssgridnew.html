@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Grid Class Layout</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: sans-serif;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-rows: 80px 1fr;
+      grid-template-columns: 1fr;
+      height: 100vh;
+    }
+
+    .grid-header {
+      background-color: navy;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+    }
+
+    .grid-layout {
+      display: grid;
+      grid-template-columns: 33% 67%;
+      height: 100%;
+    }
+
+    .grid-sidebar {
+      background-color: lightgray;
+      padding: 20px;
+    }
+
+    .grid-sidebar nav a {
+      display: block;
+      padding: 10px;
+      margin-bottom: 10px;
+      background-color: white;
+      color: black;
+      text-decoration: none;
+      border-radius: 4px;
+    }
+
+    .grid-sidebar nav a:hover {
+      background-color: #ddd;
+    }
+
+    .grid-main {
+      background-color: whitesmoke;
+      padding: 20px;
+      overflow-y: auto;
+    }
+
+    @media (max-width: 768px) {
+      .grid-layout {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+      }
+
+      .grid-sidebar {
+        order: 1;
+      }
+
+      .grid-main {
+        order: 2;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="grid-container">
+
+    <header class="grid-header">
+      My Website Header
+    </header>
+
+    <div class="grid-layout">
+      <aside class="grid-sidebar">
+        <nav>
+          <a href="#">Home</a>
+          <a href="#">About</a>
+          <a href="#">Services</a>
+          <a href="#">Contact</a>
+        </nav>
+      </aside>
+
+      <main class="grid-main">
+        <h2>Welcome!</h2>
+        <p>This is the main content area. It adjusts based on screen size and sits beside the vertical navigation bar on desktop.</p>
+      </main>
+    </div>
+
+  </div>
+
+</body>
+</html>

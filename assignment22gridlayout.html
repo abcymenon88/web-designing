@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSS Grid Responsive Layout</title>
+  
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    .container {
+      display: grid;
+      grid-template-areas:
+        "header header"
+        "sidebar main";
+      grid-template-columns: 1fr 2fr;
+      grid-template-rows: auto 1fr;
+      min-height: 100vh;
+      gap: 1rem;
+      padding: 1rem;
+    }
+
+    .header {
+      grid-area: header;
+      background-color: #4CAF50;
+      color: white;
+      padding: 1.5rem;
+      text-align: center;
+      font-size: 1.5rem;
+    }
+
+    .sidebar {
+      grid-area: sidebar;
+      background-color: #e0e0e0;
+      padding: 1rem;
+    }
+
+    .main {
+      grid-area: main;
+      background-color: #ffffff;
+      padding: 1rem;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        grid-template-areas:
+          "header"
+          "sidebar"
+          "main";
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="header">Header</header>
+    <aside class="sidebar">Sidebar</aside>
+    <main class="main">Main Content</main>
+  </div>
+</body>
+</html>
