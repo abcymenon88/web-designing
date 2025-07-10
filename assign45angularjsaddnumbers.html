@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="addApp">
+<head>
+  <title>Add Two Numbers</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body ng-controller="AddController">
+
+  <h2>Add Two Numbers</h2>
+  
+  <input type="number" ng-model="num1" placeholder="Enter first number" />
+  <input type="number" ng-model="num2" placeholder="Enter second number" />
+  
+  <button ng-click="addNumbers()">
+  
+  <h3>Result: {{result}}</h3>
+
+  <script>
+    var app = angular.module('addApp', []);
+    
+    app.controller('AddController', function($scope) {
+      $scope.num1 = 0;
+      $scope.num2 = 0;
+      $scope.result = 0;
+
+      $scope.addNumbers = function() {
+        $scope.result = Number($scope.num1) + Number($scope.num2);
+      };
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Enter Number Greater Than 5</title>
+</head>
+<body>
+
+<script>
+let number;
+
+do {
+    number = parseInt(prompt("Enter a number greater than 5:"));
+} while (isNaN(number) || number <= 5);
+
+document.write("Thank you! You entered: " + number);
+</script>
+
+</body>
+</html>

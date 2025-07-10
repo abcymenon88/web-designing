@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Prime Numbers</title>
+</head>
+<body>
+
+<script>
+document.write("Prime numbers between 1 and 50 are:<br>");
+
+for (let num = 2; num <= 50; num++) {
+    let isPrime = true;
+
+    for (let i = 2; i < num; i++) {
+        if (num % i === 0) {
+            isPrime = false;
+            break;
+        }
+    }
+
+    if (isPrime) {
+        document.write(num + " ");
+    }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="sumApp">
+<head>
+  <title>Sum of Array</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body ng-controller="SumController">
+
+  <h2>Enter 5 Numbers</h2>
+
+  <div ng-repeat="num in numbers track by $index">
+    <input type="number" ng-model="numbers[$index]" placeholder="Number {{$index + 1}}">
+  </div><br>
+
+  <button ng-click="calculateSum()">Calculate Sum</button>
+
+  <h3>Sum: {{sum}}</h3>
+
+  <script>
+    var app = angular.module('sumApp', []);
+
+    app.controller('SumController', function($scope) {
+      // Initialize an array of 5 elements
+      $scope.numbers = [0, 0, 0, 0, 0];
+      $scope.sum = 0;
+
+      $scope.calculateSum = function() {
+        $scope.sum = $scope.numbers.reduce(function(total, num) {
+          return total + Number(num);
+        }, 0);
+      };
+    });
+  </script>
+
+</body>
+</html>

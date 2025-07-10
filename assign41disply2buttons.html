@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Even/Odd & Simple Interest Calculator</title>
+  <style>
+    #result {
+      margin-top: 20px;
+      font-weight: bold;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <h2>Check Even/Odd & Calculate Simple Interest</h2>
+
+  <button onclick="checkEvenOdd()">Check Even or Odd</button>
+  <button onclick="calculateSimpleInterest()">Calculate Simple Interest</button>
+
+  <div id="result"></div>
+
+  <script>
+    function checkEvenOdd() {
+      let num = prompt("Enter an integer:");
+      num = parseInt(num);
+
+      const resultDiv = document.getElementById('result');
+
+      if (isNaN(num)) {
+        resultDiv.textContent = "Please enter a valid integer.";
+        return;
+      }
+
+      if (num % 2 === 0) {
+        resultDiv.textContent = num + " is an even number.";
+      } else {
+        resultDiv.textContent = num + " is an odd number.";
+      }
+    }
+
+    function calculateSimpleInterest() {
+      let principal = prompt("Enter principal amount:");
+      let rate = prompt("Enter rate of interest (% per annum):");
+      let time = prompt("Enter time (in years):");
+
+      principal = parseFloat(principal);
+      rate = parseFloat(rate);
+      time = parseFloat(time);
+
+      const resultDiv = document.getElementById('result');
+
+      if (isNaN(principal) || isNaN(rate) || isNaN(time)) {
+        resultDiv.textContent = "Please enter valid numbers for principal, rate, and time.";
+        return;
+      }
+
+      let simpleInterest = (principal * rate * time) / 100;
+      resultDiv.textContent = "Simple Interest = " + simpleInterest.toFixed(2);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rectangle Area and Perimeter</title>
+</head>
+<body>
+
+<h2>Rectangle Area & Perimeter</h2>
+
+<script type="text/javascript">
+  var length = 20;
+  var breadth = 35;
+
+  // Calculate area and perimeter
+  var area = length * breadth;
+  var perimeter = 2 * (length + breadth);
+
+  // Display area and perimeter
+  document.write("Length: " + length + "<br>");
+  document.write("Breadth: " + breadth + "<br>");
+  document.write("Area: " + area + "<br>");
+  document.write("Perimeter: " + perimeter + "<br>");
+
+  // Compare area and perimeter
+  if (area > perimeter) {
+    document.write("<strong>Area is greater than Perimeter.</strong>");
+  } else if (perimeter > area) {
+    document.write("<strong>Perimeter is greater than Area.</strong>");
+  } else {
+    document.write("<strong>Area and Perimeter are equal.</strong>");
+  }
+</script>
+
+</body>
+</html>

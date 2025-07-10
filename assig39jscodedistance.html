@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Distance Converter</title>
+</head>
+<body>
+  <h2>Distance Converter</h2>
+  <button onclick="convertDistance()">Convert Distance</button>
+
+  <script>
+    function convertDistance() {
+      let distanceInKm = prompt("Enter distance in kilometers:");
+      distanceInKm = parseFloat(distanceInKm);
+
+      if (isNaN(distanceInKm)) {
+        alert("Please enter a valid number.");
+        return;
+      }
+
+      let meters = distanceInKm * 1000;
+      let feet = distanceInKm * 3280.84;
+      let inches = distanceInKm * 39370.1;
+      let centimeters = distanceInKm * 100000;
+
+      alert(
+        "Distance conversions:\n" +
+        "Meters: " + meters.toFixed(2) + " m\n" +
+        "Feet: " + feet.toFixed(2) + " ft\n" +
+        "Inches: " + inches.toFixed(2) + " in\n" +
+        "Centimeters: " + centimeters.toFixed(2) + " cm"
+      );
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<title>CSS Position Demo</title>
+<style>
+  .static-box {
+    border: 2px solid blue;
+    padding: 10px;
+    margin: 10px;
+  }
+
+  .relative-box {
+    position: relative;
+    top: 10px;
+    left: 20px;
+    border: 2px solid green;
+    padding: 10px;
+    margin: 10px;
+  }
+
+  .absolute-box {
+    position: absolute;
+    top: 100px;
+    left: 300px;
+    border: 2px solid red;
+    padding: 10px;
+    background: #ffc;
+  }
+
+  .fixed-box {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    border: 2px solid purple;
+    padding: 10px;
+    background: #ccf;
+  }
+
+  .sticky-box {
+    position: sticky;
+    top: 0;
+    background: #ddd;
+    border: 2px solid orange;
+    padding: 10px;
+    font-weight: bold;
+  }
+</style>
+</head>
+<body>
+  <h2>CSS Position Properties Demo</h2>
+
+  <div class="sticky-box">Sticky Box (sticks to top on scroll)</div>
+
+  <div class="static-box">Static Position (default)</div>
+  <div class="relative-box">Relative Position (shifted 10px down, 20px right)</div>
+  <div class="absolute-box">Absolute Position (100px from top, 300px from left)</div>
+  <div class="fixed-box">Fixed Position (fixed at bottom-right corner)</div>
+
+  <p style="margin-top:150px;">Scroll down to see sticky and fixed effects.</p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed viverra mauris vitae tortor dictum, a consequat justo faucibus. Praesent pulvinar magna vel erat egestas, at bibendum nisl dignissim.</p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed viverra mauris vitae tortor dictum, a consequat justo faucibus. Praesent pulvinar magna vel erat egestas, at bibendum nisl dignissim.</p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed viverra mauris vitae tortor dictum, a consequat justo faucibus. Praesent pulvinar magna vel erat egestas, at bibendum nisl dignissim.</p>
+</body>
+</html>

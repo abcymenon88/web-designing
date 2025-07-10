@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Vowel Checker using Switch</title>
+</head>
+<body>
+  <script>
+    var c = prompt('Enter any character:');
+
+       if (c && c.length === 1 && /^[a-zA-Z]$/.test(c)) {
+          c = c.toLowerCase();
+
+      switch(c) {
+        case 'a':
+        case 'e':
+        case 'i':
+        case 'o':
+        case 'u':
+          document.write(c + " is a vowel.");
+          break;
+
+        default:
+          document.write(c + " is not a vowel.");
+      }
+    } else {
+      document.write("Please enter a valid single alphabet character.");
+    }
+  </script>
+</body>
+</html>

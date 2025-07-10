@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body ng-controller="MyController">
+
+  <h2>List of Names:</h2>
+  <ul>
+    <li ng-repeat="name in names">{{ name }}</li>
+  </ul>
+
+  <script>
+    angular.module('myApp', [])
+      .controller('MyController', function($scope) {
+        $scope.names = ['Alice', 'Bob', 'Charlie', 'Diana'];
+      });
+  </script>
+
+</body>
+</html>

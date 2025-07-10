@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Greatest of Three Numbers</title>
+</head>
+<body>
+  <script>
+    let a = 30;
+    let b = 45;
+    let c = 20;
+
+    let greatest = (a > b && a > c && a) ||
+                   (b > a && b > c && b) ||
+                   c;
+
+    document.write("The greatest number is: " + greatest);
+  </script>
+</body>
+</html>

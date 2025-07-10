@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body ng-controller="MyController">
+
+  
+  <p ng-if="showMessage">This message is conditionally displayed using ng-if.</p>
+
+ 
+  <input type="text" ng-model="textInput" ng-readonly="isReadonly" placeholder="Type here">
+
+  
+  <button ng-disabled="isDisabled" ng-click="toggleDisabled()">
+    {{ isDisabled ? "Disabled" : "Enabled" }} - Click to toggle
+  </button>
+
+  <br><br>
+
+
+  <button ng-click="showMessage = !showMessage">Toggle ng-if message</button>
+  <button ng-click="isReadonly = !isReadonly">Toggle ng-readonly</button>
+
+  <script>
+    angular.module('myApp', [])
+      .controller('MyController', function($scope) {
+        $scope.showMessage = true;
+        $scope.isReadonly = false;
+        $scope.isDisabled = false;
+
+        $scope.textInput = "Editable text";
+
+        $scope.toggleDisabled = function() {
+          $scope.isDisabled = !$scope.isDisabled;
+        };
+      });
+  </script>
+
+</body>
+</html>

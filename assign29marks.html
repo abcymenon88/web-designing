@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Result</title>
+</head>
+<body>
+
+<h2>Student Marks, Percentage & Grade</h2>
+
+<script type="text/javascript">
+  // Marks in 5 subjects
+  var physics = 76;
+  var chemistry = 78;
+  var biology = 65;
+  var mathematics = 90;
+  var computer = 85;
+
+  // Total and percentage
+  var totalMarks = physics + chemistry + biology + mathematics + computer;
+  var percentage = totalMarks / 5;
+
+  // Grade assignment
+  var grade;
+  if (percentage >= 85) {
+    grade = "S";
+  } else if (percentage >= 75) {
+    grade = "A";
+  } else if (percentage >= 65) {
+    grade = "B";
+  } else if (percentage >= 55) {
+    grade = "C";
+  } else if (percentage >= 50) {
+    grade = "D";
+  } else {
+    grade = "Fail";
+  }
+
+  // Display results
+  document.write("Physics: " + physics + "<br>");
+  document.write("Chemistry: " + chemistry + "<br>");
+  document.write("Biology: " + biology + "<br>");
+  document.write("Mathematics: " + mathematics + "<br>");
+  document.write("Computer: " + computer + "<br><br>");
+
+  document.write("Total Marks: " + totalMarks + "<br>");
+  document.write("Percentage: " + percentage.toFixed(2) + "%<br>");
+  document.write("<strong>Grade: " + grade + "</strong>");
+</script>
+
+</body>
+</html>

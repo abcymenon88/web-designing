@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="triangleApp">
+<head>
+  <title>Triangle Area Calculator</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body ng-controller="TriangleController">
+
+  <h2>Calculate Area of a Triangle</h2>
+
+  <label>Base:</label>
+  <input type="number" ng-model="base" placeholder="Enter base" /><br><br>
+
+  <label>Height:</label>
+  <input type="number" ng-model="height" placeholder="Enter height" /><br><br>
+
+  <button ng-click="calculateArea()">Calculate Area</button>
+
+  <h3>Area: {{area}} square units</h3>
+
+  <script>
+    var app = angular.module('triangleApp', []);
+
+    app.controller('TriangleController', function($scope) {
+      $scope.base = 0;
+      $scope.height = 0;
+      $scope.area = 0;
+
+      $scope.calculateArea = function() {
+        $scope.area = 0.5 * Number($scope.base) * Number($scope.height);
+      };
+    });
+  </script>
+
+</body>
+</html>

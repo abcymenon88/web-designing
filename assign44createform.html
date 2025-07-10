@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Validated Registration Form</title>
+    <script>
+        function validateForm() {
+            let name = document.getElementById("name").value.trim();
+            let fatherName = document.getElementById("fatherName").value.trim();
+            let motherName = document.getElementById("motherName").value.trim();
+            let mobile = document.getElementById("mobile").value.trim();
+            let city = document.getElementById("city").value;
+            let password = document.getElementById("password").value;
+            let confirmPassword = document.getElementById("confirmPassword").value;
+            let terms = document.getElementById("terms").checked;
+
+            const nameRegex = /^[A-Za-z\s]{3,30}$/;
+            const mobileRegex = /^\d{10}$/;
+
+            if (!name || !fatherName || !motherName || !mobile || !city || !password || !confirmPassword) {
+                alert("All fields are required.");
+                return false;
+            }
+
+            if (!nameRegex.test(name)) {
+                alert("Name must be 3-30 alphabetic characters.");
+                return false;
+            }
+
+            if (!nameRegex.test(fatherName)) {
+                alert("Father's Name must be 3-30 alphabetic characters.");
+                return false;
+            }
+
+            if (!nameRegex.test(motherName)) {
+                alert("Mother's Name must be 3-30 alphabetic characters.");
+                return false;
+            }
+
+            if (!mobileRegex.test(mobile)) {
+                alert("Mobile number must be exactly 10 digits.");
+                return false;
+            }
+
+            if (password.length < 8) {
+                alert("Password must be at least 8 characters long.");
+                return false;
+            }
+
+            if (password !== confirmPassword) {
+                alert("Passwords do not match.");
+                return false;
+            }
+
+            if (!terms) {
+                alert("You must accept the terms and conditions.");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <h2>Registration Form</h2>
+    <form onsubmit="return validateForm()">
+        <label>Name:</label><br>
+        <input type="text" id="name"><br><br>
+
+        <label>Father Name:</label><br>
+        <input type="text" id="fatherName"><br><br>
+
+        <label>Mother Name:</label><br>
+        <input type="text" id="motherName"><br><br>
+
+        <label>Mobile No.:</label><br>
+        <input type="text" id="mobile"><br><br>
+
+        <label>City:</label><br>
+        <select id="city">
+            <option value="">--Select City--</option>
+            <option value="Agra">Agra</option>
+            <option value="Mumbai">Mumbai</option>
+            <option value="Panjim">Panjim</option>
+            <option value="Bengaluru">Bengaluru</option>
+            <option value="Chennai">Chennai</option>
+        </select><br><br>
+
+        <label>Password:</label><br>
+        <input type="password" id="password"><br><br>
+
+        <label>Re-enter Password:</label><br>
+        <input type="password" id="confirmPassword"><br><br>
+
+        <input type="checkbox" id="terms"> I accept terms and conditions.<br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
+
